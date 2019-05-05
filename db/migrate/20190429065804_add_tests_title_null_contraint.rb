@@ -10,6 +10,5 @@ class AddTestsTitleNullContraint < ActiveRecord::Migration[5.2]
     change_column_null(:tests, :level, true)
     change_column_null(:tests, :categories_id, true)
   end
-
 end
 
