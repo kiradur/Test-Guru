@@ -20,4 +20,25 @@ ActiveRecord::Schema.define(version: 2019_04_29_061323) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "test_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "answers" do |t|
+    t.string :body
+    t.integer :test_id
+    t.boolean :correct
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
