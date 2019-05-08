@@ -10,40 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_061323) do
-
-  create_table "tests", force: :cascade do |t|
-    t.string "title"
-    t.integer "level"
-    t.integer "categories_id"
+ActiveRecord::Schema.define(version: 2019_05_06_084558) do
+  create_table "answers", force: :cascade do |t|
+    t.string "body"
+    t.integer "test_id"
+    t.boolean "correct"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "passed_tests", id: false, force: :cascade do |t|
+    t.integer "test_id", null: false
+    t.integer "user_id", null: false
+    t.index ["test_id"], name: "index_passed_tests_on_test_id"
+    t.index ["user_id"], name: "index_passed_tests_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "body", null: false
-    t.bigint "test_id"
+    t.string "body"
+    t.integer "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "answers" do |t|
-    t.string :body
-    t.integer :test_id
-    t.boolean :correct
+  create_table "tests", force: :cascade do |t|
+    t.string "title"
+    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users" do |t|
-    t.string :name
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "login"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 end
