@@ -8,28 +8,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 categories = Category.create!([{ title: 'Category 1' }])
 
-tests = Test.create!([{ title: 'Test 1', level: 0, category: categories.first },
-                     { title: 'Test 2', level: 1, category: categories.first },
-                     { title: 'Test 3', level: 1, category: categories.first },
-                     { title: 'Test 4', level: 2, category: categories.first }])
+tests = Test.create!([{ title: 'Test 1', level: 0, category_id: categories.first },
+                     { title: 'Test 2', level: 1, category_id: categories.first },
+                     { title: 'Test 3', level: 1, category_id: categories.first },
+                     { title: 'Test 4', level: 2, category_id: categories.first }])
 
-questions = Question.create!([{ body: 'Question 1', test: tests.first },
-                             { body: 'Question 2', test: tests.first },
-                             { body: 'Question 3', test: tests.first },
-                             { body: 'Question 4', test: tests.first }])
+questions = Question.create!([{ body: 'Question 1', test_id: tests.first },
+                             { body: 'Question 2', test_id: tests.first },
+                             { body: 'Question 3', test_id: tests.first },
+                             { body: 'Question 4', test_id: tests.first }])
 
-answers = Answer.create!([{ body: 'Answer 1', correct: false, question: questions.first },
-                         { body: 'Answer 2', correct: true, question: questions.first },
-                         { body: 'Answer 3', correct: false, question: questions.first },
+answers = Answer.create!([{ body: 'Answer 1', correct: false, question_id: questions.first },
+                         { body: 'Answer 2', correct: true, question_id: questions.first },
+                         { body: 'Answer 3', correct: false, question_id: questions.first },
                          
-                         { body: 'Answer 1', correct: true, question: questions[1] }, 
-                         { body: 'Answer 2', correct: false, question: questions[1] },
-                         { body: 'Answer 3', correct: false, question: questions[1] },
+                         { body: 'Answer 1', correct: true, question_id: questions[1] }, 
+                         { body: 'Answer 2', correct: false, question_id: questions[1] },
+                         { body: 'Answer 3', correct: false, question_id: questions[1] },
                          
-                         { body: 'Answer 1', correct: false, question: questions[2] },
-                         { body: 'Answer 2', correct: false, question: questions[2] },
-                         { body: 'Answer 3', correct: true, question: questions[2] },
+                         { body: 'Answer 1', correct: false, question_id: questions[2] },
+                         { body: 'Answer 2', correct: false, question_id: questions[2] },
+                         { body: 'Answer 3', correct: true, question_id: questions[2] },
 
-                         { body: 'Answer 1', correct: true, question: questions.last },
-                         { body: 'Answer 2', correct: false, question: questions.last },
-                         { body: 'Answer 3', correct: false, question: questions.last }])
+                         { body: 'Answer 1', correct: true, question_id: questions.last },
+                         { body: 'Answer 2', correct: false, question_id: questions.last },
+                         { body: 'Answer 3', correct: false, question_id: questions.last }])
