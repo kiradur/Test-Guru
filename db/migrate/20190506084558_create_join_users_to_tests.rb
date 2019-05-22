@@ -1,8 +1,8 @@
 class CreateJoinUsersToTests < ActiveRecord::Migration[5.2]
   def change
-    create_join_table :tests, :users, table_name: :passed_tests do |t|
-      t.index :test_id
-      t.index :user_id
+    create_join_table :users, :tests do |t|
+      t.index [:user_id, :test_id], unique: true
+      # t.index [:test_id, :user_id]
     end
   end
 end
