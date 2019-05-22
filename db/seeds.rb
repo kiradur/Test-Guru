@@ -12,7 +12,7 @@ categories = Category.create!([
 
 tests = Test.create!([
   { title: 'Ruby', level: 1, category_id: categories[1].id,},
-  { title: 'Ruby 1', evel: 2, category_id: categories[1].id,}
+  { title: 'Ruby 1', level: 2, category_id: categories[1].id,}
   ])
 
 questions = Question.create!([
