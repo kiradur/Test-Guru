@@ -6,30 +6,41 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-categories = Category.create([{ title: 'Category 1' }])
+categories = Category.create!(
+  [
+    { title: 'Frontend' }, 
+    { title: 'Backend' }, 
+    { title: 'Mobile Development' }
+  ]
+  )
 
-tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first },
-                     { title: 'Test 2', level: 1, category: categories.first },
-                     { title: 'Test 3', level: 1, category: categories.first },
-                     { title: 'Test 4', level: 2, category: categories.first }])
+tests = Test.create!([
+  { title: 'Ruby',
+    level: 1,
+    category_id: categories[1].id,},
+  { title: 'Ruby 1',
+    level: 2,
+    category_id: categories[1].id,}
+  ])
 
-questions = Question.create([{ body: 'Question 1', test: tests.first },
-                             { body: 'Question 2', test: tests.first },
-                             { body: 'Question 3', test: tests.first },
-                             { body: 'Question 4', test: tests.first }])
+questions = Question.create!([
+  { body: 'What programming language are you studying?',
+    test_id: tests[0].id },
+  { body: 'This programming language belongs to which category?',
+    test_id: tests[0].id }
+  ])
 
-answers = Answer.create([{ body: 'Answer 1', correct: false, question: questions.first },
-                         { body: 'Answer 2', correct: true, question: questions.first },
-                         { body: 'Answer 3', correct: false, question: questions.first },
-                         
-                         { body: 'Answer 1', correct: true, question: questions[1] }, 
-                         { body: 'Answer 2', correct: false, question: questions[1] },
-                         { body: 'Answer 3', correct: false, question: questions[1] },
-                         
-                         { body: 'Answer 1', correct: false, question: questions[2] },
-                         { body: 'Answer 2', correct: false, question: questions[2] },
-                         { body: 'Answer 3', correct: true, question: questions[2] },
-
-                         { body: 'Answer 1', correct: true, question: questions.last },
-                         { body: 'Answer 2', correct: false, question: questions.last },
-                         { body: 'Answer 3', correct: false, question: questions.last }])
+answers = Answer.create!([
+  { body_answer: 'Ruby', 
+    correct: 1,
+    question_id: questions[0].id },
+  { body_answer: 'PHP',
+    correct: 0,
+    question_id: questions[0].id },
+  { body_answer: 'Backend',
+    correct: 1,
+    question_id: questions[1].id },
+  { body_answer: 'Frontend',
+    correct: 0,
+    question_id: questions[1].id }
+  ])
