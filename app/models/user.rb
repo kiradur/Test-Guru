@@ -1,11 +1,11 @@
 class User < ApplicationRecord
 
-  has_many :test_pasages
+  has_many :test_passages
   has_many :tests, through: :test_pasages
   has_many :created_tests, class_name: "Test", foreign_key: "author_id"
 
-  validates :name, :e_mail, presence: true
-  validates :e_mail, uniqueness: true
+  validates :name, :email, presence: true
+  validates :email, uniqueness: true
 
   def select_by_level(level)
     tests.select_by_level(level)

@@ -1,4 +1,4 @@
-class TestPasage < ApplicationRecord
+class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -16,10 +16,6 @@ class TestPasage < ApplicationRecord
 
   def questions_count
     test.questions.count
-  end
-
-  def current_question_number
-    test.questions.where('id < ?', current_question.id).count + 1
   end
 
   def result_points
@@ -45,9 +41,7 @@ class TestPasage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers_count = correct_answers.count
-    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers_count == answer_ids.count
+    question.answers.correct.ids.sort == answer_ids.sort
   end
 
   def correct_answers
