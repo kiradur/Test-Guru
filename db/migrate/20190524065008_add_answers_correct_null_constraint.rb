@@ -1,5 +1,5 @@
 class AddAnswersCorrectNullConstraint < ActiveRecord::Migration[5.2]
-   def change
+  def change
     change_column_null(:answers, :correct, false)
   end
 end
