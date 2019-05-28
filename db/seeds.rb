@@ -13,14 +13,15 @@ categories = Category.create!(
     { title: 'Mobile Development' }
   ]
   )
+user = User.create!(email: 'voytulevich.k@gmail.com', name: 'kira')
 
 tests = Test.create!([
   { title: 'Ruby',
     level: 1,
-    category_id: categories[1].id,},
+    category_id: categories[1].id },
   { title: 'Ruby 1',
     level: 2,
-    category_id: categories[1].id,}
+    category_id: categories[1].id }
   ])
 
 questions = Question.create!([
@@ -31,16 +32,16 @@ questions = Question.create!([
   ])
 
 answers = Answer.create!([
-  { body_answer: 'Ruby', 
-    correct: 1,
+  { body: 'Ruby', 
+    correct: true,
     question_id: questions[0].id },
-  { body_answer: 'PHP',
-    correct: 0,
+  { body: 'PHP',
+    correct: false,
     question_id: questions[0].id },
-  { body_answer: 'Backend',
-    correct: 1,
+  { body: 'Backend',
+    correct: true,
     question_id: questions[1].id },
-  { body_answer: 'Frontend',
-    correct: 0,
+  { body: 'Frontend',
+    correct: false,
     question_id: questions[1].id }
   ])
