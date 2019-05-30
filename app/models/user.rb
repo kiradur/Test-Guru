@@ -15,8 +15,6 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
-  validates :email, uniqueness: true 
-  validates :email, format: /\w+[^\s]@\w+[^\s]\.\w+/i
 
   def select_by_level(level)
     tests.select_by_level(level)

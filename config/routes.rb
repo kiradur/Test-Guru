@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users,
              path: :gurus,
              path_names: { sign_in: :login, sign_out: :logout },
+             controllers: { registrations: 'registrations'},
              controllers: { sessions: 'sessions'}
 
   resources :tests, only: :index do

@@ -49,8 +49,4 @@ class Admin::QuestionsController < Admin::BaseController
   def question_params
     params.require(:question).permit(:body)
   end
-
-  def rescue_with_question_not_found
-    render plain: 'Question was not found'
-  end
 end
