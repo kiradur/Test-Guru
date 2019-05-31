@@ -4,14 +4,14 @@
 <div>
   You answered percent correct:
 
-  <% if @test_passage.test_passed? %>
+  <% if @test_passage.passed? %>
 
-  <p class="success"> <%= @test_passage.result_points %> </p>
+  <p class="success"> <%= @test_passage.success_rate %></p>
   You passed the test!
   
   <% else %>
 
-  <p class="fail"> <%= @test_passage.result_points %> </p>
+  <p class="fail"> <%= @test_passage.success_rate %> </p>
   You didn't pass the test!
 
   <% end %>

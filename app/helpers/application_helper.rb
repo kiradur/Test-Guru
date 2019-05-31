@@ -10,4 +10,5 @@ module ApplicationHelper
   def flash_mes(type)
     content_tag :p, flash[type], class: "flash #{type}" if type.present?
   end
+
 end

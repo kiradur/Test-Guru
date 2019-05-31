@@ -13,15 +13,17 @@ categories = Category.create!(
     { title: 'Mobile Development' }
   ]
   )
-user = User.create!(email: 'voytulevich.k@gmail.com', password: 'kira')
+user = User.create!(email: 'kira@gmail.com', password: '123456')
 
 tests = Test.create!([
   { title: 'Ruby',
     level: 1,
-    category_id: categories[1].id },
+    category_id: categories[1].id,
+    author: user },
   { title: 'Ruby 1',
     level: 2,
-    category_id: categories[1].id }
+    category_id: categories[1].id,
+    author: user }
   ])
 
 questions = Question.create!([
