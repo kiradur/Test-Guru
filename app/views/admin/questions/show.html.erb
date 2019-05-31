@@ -1,12 +1,17 @@
-<%= @question.body %>
+<h1><%= @question.test.title %> </h1>
 
-<h2>Answers</h2>
+<p>
+  <strong><%= t('.body') %>: </strong>
+  <%= @question.body %>
+</p>
 
-<%=link_to 'Create answer', new_admin_question_answer_path(@question) %>
+<h2><%= t('.answers')%></h2>
+
+<%=link_to t('.create'), new_admin_question_answer_path(@question) %>
 
 <ol>
   <%= render @question.answers %>
 </ol>
 
-<%= link_to 'Edit', edit_admin_question_path(@question) %>
-<%= link_to 'Back', admin_test_path(@question.test_id) %>
+<%= link_to t('shared.edit'), edit_admin_question_path(@question) %>
+<%= link_to t('shared.back'), admin_test_path(@question.test_id) %>

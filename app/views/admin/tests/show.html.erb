@@ -1,25 +1,24 @@
-
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('.title') %>:</strong>
   <%= @test.title %>
 </p>
 
 <p>
-  <strong>Level:</strong>
+  <strong><%= t('.level') %>:</strong>
   <%= @test.level %>
 </p>
 
 <p>
-  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
 </p>
 
 <table>
   <tr>
-    <th>Questions</th>
+    <th><%= t('.questions') %></th>
   </tr>
   <%= render @test.questions %>
 </table>
 <br>
 
-<%= link_to 'Edit', edit_admin_test_path(@test) %>
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('shared.edit'), edit_admin_test_path(@test) %>
+<%= link_to t('shared.back'), admin_tests_path %>
