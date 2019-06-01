@@ -1,33 +1,114 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      user:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "email" 
+        password: "password" 
+        password_confirmation: "password confirmation"
+        remember_me: "remember me"      
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed!"
+      you_answered_percent_correct: "You answerred percents correct"
+      you_passed_the_test: "You passed the test!"
+      you_didnot_pass_the_test: "You didn't pass the test!"
+    show:
+      passing_the_test: "Passing the test %{title}"
+      question_number_of_questions_counts: "%{question_number} of %{questions_counts}"
+
+  admin:
+    tests:
+      index:
+        header: "Tricky tests"
+        new_test: "New test"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+      show:
+        new_question: "New question"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+      new:
+        header: "Creating new test"
+      create:
+        success: "Test was successfully created."
+      edit:
+        header: "Editing the test %{title}"
+      update:
+        success: "Test was successfully updated."
+      delete:
+        success: "Test was successfully deleted."
+    questions:
+      show:
+        body: "Body"
+        answers: "Answers"
+        create: "Create answer"          
+    answers:
+      new:
+        header: "New answer" 
+      edit:
+        header: "Edit answer"
+      show:
+        header: "Question"
+        answer: "Answer" 
+        correct: "Correct answer"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  shared:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    next: "Next"
+    are_you_sure?: "Are you sure?"
+    all_tests: "All tests"
+
+  layouts:
+    header:
+      login: "Login"
+      signup: "Sign up"
+      logout: "Logout"
+      test_guru: "Test Guru"
+      welcome: "Welcome"
+      guru: "Guru"
+    nav:
+      logout: "Logout"
+      title: "Test Guru Admin panel"
+      welcome: "Welcome"
+      guru: "Guru"
+    footer:
+      author: "kira"
+      about_author: "Ruby on Rails Programmer"
+      about_project: "Testing program on various topics. Education project at online school"
