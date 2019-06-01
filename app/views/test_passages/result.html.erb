@@ -1,20 +1,25 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
 
-<div>
-  <%= t('.you_answered_percent_correct') %>:
+    <h1><%= t('.header', title: @test_passage.test.title) %></h1>
+    <div class="card border-primary">
+      <div class="card-body">
+        <div>
+          <%= t('.you_answered_percent_correct') %>:
 
-  <% if @test_passage.passed? %>
+          <% if @test_passage.success?  %>
+            <span class="test_passages success" > <%= @test_passage.percent_correct.to_i %></span><br>
+            <%= t('.you_passed_the_test') %>
+          <% else %>
+            <span class="test_passages fail" > <%= @test_passage.percent_correct.to_i %></span><br>
+              <%= t('.you_didnot_pass_the_test') %>
+          <% end %>
+        </div>
+        <br>
 
- <p style="color:green;"><%= @test_passage.success_rate %></p>
-  <%= t('.you_passed_the_test') %>
-  
-  <% else %>
+        <%= link_to t('shared.all_tests'), tests_path %>
 
-  <p style="color:red;"><%= @test_passage.success_rate %></p>
-  <%= t('.you_didnot_pass_the_test') %>
-
-  <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-<br>
-
-<%= link_to t('shared.all_tests'), tests_path %>

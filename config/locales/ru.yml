@@ -119,16 +119,9 @@ ru:
     actions: "Действия"
 
   layouts:
-    header:
-      login: "Войти"
-      signup: "Зарегистрироваться"
+    nav_admin:
       logout: "Выйти"
-      test_guru: "Тест Гуру"
-      welcome: "Добро пожаловать"
-      guru: "Гуру"
-    nav:
-      logout: "Выйти"
-      title: "Тест Гуру админ панель"
+      title: "Aдмин панель"
       welcome: "Добро пожаловать"
       guru: "Гуру"
     footer:
