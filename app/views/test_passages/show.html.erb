@@ -8,9 +8,9 @@
       <%= t('.question_number_of_questions_counts', question_number: @test_passage.current_question_number, questions_counts: @test_passage.questions_count) %>
     </h2>
 
-    <b>
-      <%= @test_passage.current_question.body %>
-    </b>
+    <p>
+      <b><%= @test_passage.current_question.body %></b>
+    </p>
 
     <div class="card border-primary">
       <div class="card-body">
@@ -23,7 +23,8 @@
             </p>
           <% end %>
 
-          <%= form.submit t('shared.next'), class: 'btn btn-primary' %>
+          <p><%= link_to 'Gist guestion', gist_test_passage_path(@test_passage), method: :post %></p>
+          <p><%= form.submit t('shared.next'), class: 'btn btn-primary' %></p>
         <% end %>
 
       </div>
