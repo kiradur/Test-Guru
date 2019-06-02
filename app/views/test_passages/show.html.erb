@@ -1,19 +1,32 @@
-<h1><%= t('.header') %> <%= @test_passage.test.title %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
 
-<b>
-  <%= @test_passage.current_question.body %>
-  <%= @test_passage.current_question.id %>/<%= @test_passage.test.questions.count %>
-</b>
+    <h1>
+      <%= t('.passing_the_test', title: @test_passage.test.title) %>
+    </h1>
+    <h2>
+      <%= t('.question_number_of_questions_counts', question_number: @test_passage.current_question_number, questions_counts: @test_passage.questions_count) %>
+    </h2>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, 
-      @test_passage.current_question.answers, 
-      :id, :body, include_hidden: false do |b|%>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object_id}"  %>
-      <%= b.label %>
-    </p>
-  <% end %>
+    <b>
+      <%= @test_passage.current_question.body %>
+    </b>
 
-  <p><%= form.submit t('shared.next') %></p>
-<% end %>
+    <div class="card border-primary">
+      <div class="card-body">
+
+        <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+          <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+            <p>
+              <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+              <%= b.label %>
+            </p>
+          <% end %>
+
+          <%= form.submit t('shared.next'), class: 'btn btn-primary' %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
