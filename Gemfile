@@ -34,8 +34,9 @@ gem 'rails-i18n', '~> 5.0.0'
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'octicons_helper'
 
- gem 'octokit', '~> 4.0'
+gem 'octokit', '~> 4.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

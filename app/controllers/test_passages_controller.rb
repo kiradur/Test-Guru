@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_test_passage, only: %i[show update result gist]
+  before_action :set_test_passage, only: %i[create show update result gist]
 
   def show; end
 

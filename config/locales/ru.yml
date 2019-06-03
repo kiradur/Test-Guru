@@ -5,13 +5,18 @@ ru:
         create: "Создать Тест"
         update: "Обновить Тест"
         delete: "Удалить тест"
-    select:
-      prompt: "Пожалуйста выберите"
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Почта" 
+        password: "Пароль" 
+        password_confirmation: "подтверждение пароля"
+        remember_me: "запомнить меня"   
 
   shared:
     errors:

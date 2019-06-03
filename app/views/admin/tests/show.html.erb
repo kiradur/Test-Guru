@@ -1,24 +1,23 @@
-<p>
-  <strong><%= t('.title') %>:</strong>
-  <%= @test.title %>
-</p>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-12">
+   <%= t('.title') %> : <%= @test.title %> | 
+   <%= t('.level') %> : <%= @test.level %>| 
 
-<p>
-  <strong><%= t('.level') %>:</strong>
-  <%= @test.level %>
-</p>
+    <%= link_to t('shared.edit'), edit_admin_test_path(@test) %>
+    <%= link_to t('shared.back'), admin_tests_path %>
 
-<p>
-  <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
-</p>
+    <hr />
 
-<table>
-  <tr>
-    <th><%= t('.questions') %></th>
-  </tr>
-  <%= render @test.questions %>
-</table>
-<br>
+    <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
 
-<%= link_to t('shared.edit'), edit_admin_test_path(@test) %>
-<%= link_to t('shared.back'), admin_tests_path %>
+
+    <table class="table table-striped">
+      <thead>
+        <th><%= t('.questions') %></th>
+      </thead>
+      <tbody>
+        <%= render @test.questions %>
+      </tbody>
+    </table> 
+  </div>
+</div>
