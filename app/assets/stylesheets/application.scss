@@ -1,6 +1,7 @@
 @import "bootstrap";
-@import "typography/icons";
-@import "global";
+@import "typography/icons.scss";
+@import "global.scss";
+@import "test_passages";
 
 .navbar-fixed-bottom {
   position: fixed;
