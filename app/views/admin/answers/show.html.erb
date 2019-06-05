@@ -1,15 +1,18 @@
-<h2><%= t('.header') %>:</h2>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-12">
+    <%= t('.header') %>: <%= @answer.question.body %>  
+    <hr>  
 
-<%= @answer.question.body %>  
+    <p>
+      <b><%= t('.answer') %>:</b>
+      <%= @answer.body %>
+    </p>
 
-<p>
-  <b><%= t('.answer') %>:</b>
-  <%= @answer.body %>
-</p>
+    <p>
+      <b><%= t('.correct') %>:</b>
+      <%= @answer.correct %>
+    </p>  
 
-<p>
-  <b><%= t('.correct') %>:</b>
-  <%= @answer.correct %>
-</p>  
-
-<%= link_to t('shared.back'), admin_question_path(@answer.question) %>
+    <%= link_to t('shared.back'), admin_question_path(@answer.question) %>
+  </div>
+</div> 

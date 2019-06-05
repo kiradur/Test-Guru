@@ -1,17 +1,22 @@
-<h1><%= @question.test.title %> </h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-12">
+    <%= t('.body') %>: <%= @question.body %> | 
 
-<p>
-  <strong><%= t('.body') %>: </strong>
-  <%= @question.body %>
-</p>
+    <%= link_to t('shared.edit'), edit_admin_question_path(@question) %>
+    <%= link_to t('shared.back'), admin_test_path(@question.test_id) %>
 
-<h2><%= t('.answers')%></h2>
+    <hr />
 
-<%=link_to t('.create'), new_admin_question_answer_path(@question) %>
+    <%=link_to t('.create'), new_admin_question_answer_path(@question) %>
 
-<ol>
-  <%= render @question.answers %>
-</ol>
 
-<%= link_to t('shared.edit'), edit_admin_question_path(@question) %>
-<%= link_to t('shared.back'), admin_test_path(@question.test_id) %>
+    <table class="table table-striped">
+      <thead>
+        <th><%= t('.answers')%></th>
+      </thead>
+      <tbody>
+        <%= render @question.answers %>
+      </tbody>
+    </table> 
+  </div>
+</div>
