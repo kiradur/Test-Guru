@@ -6,30 +6,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-categories = Category.create!(
-  [
-    { title: 'Frontend' }, 
-    { title: 'Backend' }, 
-    { title: 'Mobile Development' }
-  ]
-  )
 
-
-tests = Test.create!([
-  { title: 'Ruby',
-    level: 1,
-    category_id: categories[1].id},
-  { title: 'Ruby 1',
-    level: 2,
-    category_id: categories[1].id}
-  ])
-
-questions = Question.create!([
-  { body: 'What programming language are you studying?',
-    test_id: tests[0].id },
-  { body: 'This programming language belongs to which category?',
-    test_id: tests[0].id }
-  ])
 
 answers = Answer.create!([
   { body: 'Ruby', 
