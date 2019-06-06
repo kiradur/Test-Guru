@@ -34,14 +34,14 @@ questions = Question.create!([
 answers = Answer.create!([
   { body: 'Ruby', 
     correct: true,
-    question_id: questions[0].id },
+    question_id: 1 },
   { body: 'PHP',
     correct: false,
-    question_id: questions[0].id },
+    question_id: 1 },
   { body: 'Backend',
     correct: true,
-    question_id: questions[1].id },
+    question_id: 2 },
   { body: 'Frontend',
     correct: false,
-    question_id: questions[1].id }
+    question_id: 2 }
   ])
