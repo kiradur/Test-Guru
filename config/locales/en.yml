@@ -55,6 +55,8 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+      form_inline:
+        submit: "OK"    
       show:
         new_question: "New question"
         title: "Title"
