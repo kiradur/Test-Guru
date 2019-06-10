@@ -18,7 +18,9 @@ en:
       user:
         name: "Name"
         email: "Email"
-        password: "Password"     
+        password: "Password" 
+      feedback:
+         message: "Message"         
 
     errors:
       messages:
