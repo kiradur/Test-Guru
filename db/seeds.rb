@@ -21,11 +21,11 @@ tests = Test.create!([
   { title: 'Ruby',
     level: 1,
     category_id: categories[1].id,
-    author_id: users[0] },
+    author: users },
   { title: 'Ruby 1',
     level: 2,
     category_id: categories[1].id,
-    author_id: users[0] }
+    author: users }
   ])
 
 questions = Question.create!([
