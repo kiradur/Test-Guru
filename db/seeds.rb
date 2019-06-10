@@ -20,32 +20,32 @@ categories = Category.create!(
 tests = Test.create!([
   { title: 'Ruby',
     level: 1,
-    category_id: categories[1].id,
-    author: user },
+    category_id: categories[1],
+    author: user[0] },
   { title: 'Ruby 1',
     level: 2,
-    category_id: categories[1].id,
-    author: user }
+    category_id: categories[1],
+    author: user[0] }
   ])
 
 questions = Question.create!([
   { body: 'What programming language are you studying?',
-    test_id: tests[0].id },
+    test_id: tests[0] },
   { body: 'This programming language belongs to which category?',
-    test_id: tests[0].id }
+    test_id: tests[0] }
   ])
 
 answers = Answer.create!([
   { body: 'Ruby', 
     correct: true,
-    question_id: questions[0].id },
+    question_id: questions[0] },
   { body: 'PHP',
     correct: false,
-    question_id: questions[0].id },
+    question_id: questions[0] },
   { body: 'Backend',
     correct: true,
-    question_id: questions[1].id },
+    question_id: questions[1] },
   { body: 'Frontend',
     correct: false,
-    question_id: questions[1].id }
+    question_id: questions[1] }
   ])
