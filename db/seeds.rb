@@ -15,37 +15,37 @@ categories = Category.create!(
     { title: 'Mobile Development' }
   ]
   )
-
+users = User.create!(email: 'kira@gmail.com', password: '123456')
 
 tests = Test.create!([
   { title: 'Ruby',
     level: 1,
-    category_id: categories[1],
-    author: user[0] },
+    category_id: categories[1].id,
+    author: users[0] },
   { title: 'Ruby 1',
     level: 2,
-    category_id: categories[1],
-    author: user[0] }
+    category_id: categories[1].id,
+    author: users[0] }
   ])
 
 questions = Question.create!([
   { body: 'What programming language are you studying?',
-    test_id: tests[0] },
+    test_id: tests[0].id },
   { body: 'This programming language belongs to which category?',
-    test_id: tests[0] }
+    test_id: tests[0].id }
   ])
 
 answers = Answer.create!([
   { body: 'Ruby', 
     correct: true,
-    question_id: questions[0] },
+    question_id: questions[0].id },
   { body: 'PHP',
     correct: false,
-    question_id: questions[0] },
+    question_id: questions[0].id },
   { body: 'Backend',
     correct: true,
-    question_id: questions[1] },
+    question_id: questions[1].id },
   { body: 'Frontend',
     correct: false,
-    question_id: questions[1] }
+    question_id: questions[1].id }
   ])
