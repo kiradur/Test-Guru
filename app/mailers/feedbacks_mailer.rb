@@ -4,7 +4,7 @@ class FeedbacksMailer < ApplicationMailer
      @user = feedback.user
      @message = feedback.message
 
-      mail(to: @user.email)
+      mail(to: User.find_by(type: 'Admin').email)
    end
 
   end
