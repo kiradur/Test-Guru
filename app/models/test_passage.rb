@@ -2,7 +2,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
-
+  has_one :category, through: :test
   before_validation :before_validation_set_question, only: %i[create update]
 
   def completed?
