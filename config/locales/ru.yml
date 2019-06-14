@@ -102,6 +102,12 @@ ru:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
 
+  feedbacks:
+     create:
+       send_feedback: 'Письмо отправлено'
+     new:  
+       header: "Отправить отзыв"    
+
   shared:
     show: "Показать"
     edit: "Изменить"

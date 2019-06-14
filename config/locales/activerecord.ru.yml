@@ -19,6 +19,8 @@ ru:
         name: "Имя"
         email: "Почта"
         password: "Пароль" 
+      feedback:
+         message: "Сообщение"    
 
     errors:
       messages:

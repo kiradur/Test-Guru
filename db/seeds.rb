@@ -6,6 +6,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
 categories = Category.create!(
   [
     { title: 'Frontend' }, 
@@ -13,17 +15,15 @@ categories = Category.create!(
     { title: 'Mobile Development' }
   ]
   )
-user = User.create!(email: 'kira@gmail.com', password: '123456')
+
 
 tests = Test.create!([
   { title: 'Ruby',
     level: 1,
-    category_id: categories[1].id,
-    author: user },
+    category_id: categories[1].id},
   { title: 'Ruby 1',
     level: 2,
-    category_id: categories[1].id,
-    author: user }
+    category_id: categories[1].id}
   ])
 
 questions = Question.create!([

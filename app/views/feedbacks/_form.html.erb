@@ -1,0 +1,12 @@
+<%= form_with(model: feedback, local: true) do |form| %>
+   <%= render 'shared/errors', resource: feedback %>
+   <div class="row justify-content-center mt-6">
+     <div class="col col-md-3">
+       <div class="container">
+         <% form.label :message %><br>
+         <%= form.text_area :message, id: :feedback_message %>
+       </div>  
+       <%= form.submit 'Отправить', class: 'btn btn-primary btn-block' %>
+     </div>  
+   </div>  
+ <% end %>
