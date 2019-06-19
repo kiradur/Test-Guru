@@ -3,7 +3,4 @@
     <%= badge.caption%>
   </div>
   <%= image_tag badge.image, class: 'mx-auto d-block' %>
-  <div class='text-center'>
-    x<%= current_user.badges.where(id: badge.id).count %>
-  </div>
 </div>

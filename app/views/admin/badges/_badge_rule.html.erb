@@ -1,28 +1,28 @@
 <% if badge.rule %>
   <dl class='row'>
-    <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:rule_type) %> </dt>
+    <dt class='col-lg-3'><%= BadgeRuleService.human_attribute_name(:rule_type) %> </dt>
     <dd class='col-lg-9'><%= t(badge.rule.rule_type, scope: [:badge_rule, :type]) %></dd>
 
-    <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:unique) %></dt>
+    <dt class='col-lg-3'><%= BadgeRuleService.human_attribute_name(:unique) %></dt>
     <dd class='col-lg-9'><%= badge.rule.unique ? octicon('check') : octicon('x') %></dd>
     
     <% if badge.rule.params.include? :first_try %>
-      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:first_try) %></dt>
+      <dt class='col-lg-3'><%= BadgeRuleService.human_attribute_name(:first_try) %></dt>
       <dd class='col-lg-9'><%= badge.rule.first_try ? octicon('check') : octicon('x') %></dd>    
     <% end %>
 
     <% if badge.rule.params.include? :level %>
-      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:level) %></dt>
+      <dt class='col-lg-3'><%= BadgeRuleService.human_attribute_name(:level) %></dt>
       <dd class='col-lg-9'><%= badge.rule.level %></dd>    
     <% end %>
     
     <% if badge.rule.params.include? :category %>
-      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:category) %></dt>
+      <dt class='col-lg-3'><%= BadgeRuleService.human_attribute_name(:category) %></dt>
       <dd class='col-lg-9'><%= badge.rule.category ? "#{badge.rule.category.title}" : t('.any') %></dd>
     <% end %>
 
     <% if badge.rule.params.include? :test %>
-      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:test) %></dt>
+      <dt class='col-lg-3'><%= BadgeRuleService.human_attribute_name(:test) %></dt>
       <dd class='col-lg-9'><%= badge.rule.test ? "#{badge.rule.test.title}" : t('.any') %></dd>
     <% end %>
   </dl>

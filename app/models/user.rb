@@ -9,18 +9,25 @@ class User < ApplicationRecord
          :validatable,
          :confirmable
 
+  belongs_to :badge
+  has_and_belongs_to_many :badges
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: "Test", foreign_key: "author_id"
   has_many :gists, dependent: :destroy
   has_many :feedbacks
-  has_and_belongs_to_many :badges
  
   before_save :downcase_email
 
 
   def select_by_level(level)
     tests.select_by_level(level)
+  end
+
+  def user_badge
+    self.badges.each do |badge| 
+      self.badges.where(id: badge.id)
+    end
   end
 
   def admin?
