@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :validatable,
          :confirmable
 
-  belongs_to :badge
+ 
   has_and_belongs_to_many :badges
   has_many :test_passages
   has_many :tests, through: :test_passages

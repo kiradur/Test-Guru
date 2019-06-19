@@ -15,7 +15,13 @@ categories = Category.create!(
     { title: 'Mobile Development' }
   ]
   )
-
+admin = User.create(
+  email: 'adm@gmail.com',
+  password: '123456',
+  first_name: 'Admin',
+  last_name: 'Guru',
+  type: 'Admin'
+)
 
 tests = Test.create!([
   { title: 'Ruby',

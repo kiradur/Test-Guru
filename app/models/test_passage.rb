@@ -10,7 +10,7 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids) && !time_is_over?
     save!
   end
 
@@ -26,8 +26,17 @@ class TestPassage < ApplicationRecord
     percent_correct >= 85
   end
 
-   def percent_correct
+  def percent_correct
     (correct_questions * 100 / questions_count).round(2)
+  end
+
+  def time_left
+    result = created_at + test.timer.seconds - Time.current
+    result >= 0 ? result : 0
+  end
+
+  def time_is_over?
+    test.timer.nonzero? && time_left <= 0
   end
 
   private
@@ -37,7 +46,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    if current_question.nil?
+    if current_question.nil? || time_is_over?
       test.questions.first
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
