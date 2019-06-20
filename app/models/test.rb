@@ -8,6 +8,8 @@ class Test < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :timer_in_minutes, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :timer_in_minutes, presence: true
 
   scope :easy, -> { select_by_level(0..1) }
   scope :medium, -> { select_by_level(2..4) }
@@ -19,6 +21,14 @@ class Test < ApplicationRecord
     joins(:category)
       .where(categories: { title: category_title })
       .order(title: :desc) }
+
+  def timer_in_minutes
+    timer.zero? ? 0 : timer / 60
+  end
+
+  def timer_in_minutes=(value)
+    self.timer = value.to_i * 60
+  end    
 
   def self.select_by_category_title(category_title)
     Test.select_by_category(category_title).pluck(:title)
