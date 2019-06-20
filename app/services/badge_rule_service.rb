@@ -43,7 +43,6 @@ class BadgeRuleService < BadgeRule
 
   def level_rule
     tests = category ? category.tests : Test
-    byebug
     @user.tests_by_level(level, category).ids.sort.uniq == tests.where(level: level).ids
   end
 
