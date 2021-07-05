@@ -2,6 +2,7 @@
   <div class="col col-md-12">
    <%= t('.title') %> : <%= @test.title %> | 
    <%= t('.level') %> : <%= @test.level %>| 
+   <%= t('.timer') %> : <%= @test.timer %>|
 
     <%= link_to t('shared.edit'), edit_admin_test_path(@test) %>
     <%= link_to t('shared.back'), admin_tests_path %>
