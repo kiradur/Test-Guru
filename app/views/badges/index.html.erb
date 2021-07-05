@@ -1,0 +1,18 @@
+<div class='row'>
+  <h3>Все доступные бейджи</h3>
+    <% @badges.each do |badge| %>
+      <%= render badge %>
+    <% end %>
+  <h3>Ваши бейджи</h3>
+    <% @current_user.badges.each do |badge| %>
+      <div class='col-lg-3 m-5 p-3 border rounded'>
+        <div class='h5 text-center'>
+         <%= badge.caption%>
+        </div>
+        <%= image_tag badge.image, class: 'mx-auto d-block' %>
+        <div class='text-center'>
+        <%= current_user.user_badge.count %>
+        </div>
+       </div>
+    <% end %>  
+</div>

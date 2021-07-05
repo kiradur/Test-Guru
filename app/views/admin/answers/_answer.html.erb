@@ -1,5 +1,6 @@
 <tr>
   <td><%= answer.body %>
+  <td><%= answer.correct ? octicon('check') : octicon('x') %></td>	
   <td><%= link_to t('shared.show'), admin_answer_path(answer) %></td>
   <td><%= link_to t('shared.edit'), edit_admin_answer_path(answer) %></td> 
   <td>
